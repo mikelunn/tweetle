@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Tweets
+
+  </div>
+
+    <div class="addon" style="overflow-y: scroll; height:400px;">
+
+
+      <ul>
+        <li *ngFor="let tweet of tweets" class="animated fadeIn clearfix">
+          <a href="http://twitter.com/{{tweet.user}}" target="_blank">
+            <img class="round" src="{{tweet.image}}">
+            <div class="legend-info">
+              <strong>{{tweet.user}}</strong>{{tweet.text}}
+            </div></a>
+
+        </li>
+
+
+      </ul>
+    </div>
+
+</div>
+
+
