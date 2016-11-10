@@ -7,21 +7,23 @@ var express = require('express'),
   io = require('socket.io')(server);
 
 var path = require('path');
+var bodyParser = require("body-parser");
 
 // twitter settings
 require('./src/server/controllers/twitter')(io);
 
 server.listen(process.env.PORT || "5000");
 
-app.use('/',express.static(__dirname+'/dist'));
+app.use(express.static(__dirname + "/dist"));
+app.use(bodyParser.json());
 
-app.get('/*', function (req, res) {
-
-
-  res.sendFile(path.join(__dirname+'/dist','index.html'))
-
-
-});
+// app.get('/*', function (req, res) {
+//
+//
+//   res.sendFile(path.join(__dirname+'/dist','index.html'))
+//
+//
+// });
 //http://socket.io/docs/rooms-and-namespaces/
 //TODO: Add post route where user can post bounds. After creating bounds the client would listen for even guid_bounds_changed.
 //The post would include the guid, we would then emit the stream with the guid
