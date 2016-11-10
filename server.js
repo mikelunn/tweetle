@@ -9,16 +9,16 @@ var express = require('express'),
 var path = require('path');
 
 // twitter settings
-require('./controllers/twitter')(io);
+require('./src/server/controllers/twitter')(io);
 
 server.listen(process.env.PORT || "5000");
 
-app.use('/',express.static(__dirname+'/../../dist'));
+app.use('/',express.static(__dirname+'/dist'));
 
 app.get('/*', function (req, res) {
 
 
-  res.sendFile(path.join(__dirname+'/../dist','index.html'))
+  res.sendFile(path.join(__dirname+'/dist','index.html'))
 
 
 });
