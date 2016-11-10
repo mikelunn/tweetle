@@ -4,17 +4,24 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { TweetComponent } from './tweet/tweet.component';
+import {TweetService} from "./tweet/tweet.service";
+import { MapComponent } from './map/map.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TweetComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
-  providers: [],
+  providers: [TweetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
