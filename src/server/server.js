@@ -11,7 +11,7 @@ var path = require('path');
 // twitter settings
 require('./controllers/twitter')(io);
 
-server.listen(3000);
+server.listen(process.env.PORT || "5000");
 
 app.use('/',express.static(__dirname+'/../../dist'));
 
