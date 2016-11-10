@@ -13,13 +13,14 @@ require('./controllers/twitter')(io);
 
 server.listen(process.env.PORT || "5000");
 
-// app.use('/',express.static(__dirname+'/../../dist'));
-app.use(express.static('dist'));
+app.use('/',express.static(__dirname+'/../../dist'));
 
 app.get('/*', function (req, res) {
 
 
-  res.sendFile('index.html')
+  res.sendFile('index.html', { root: '/../../dist'});
+
+
 
 
 });
