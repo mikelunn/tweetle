@@ -23,6 +23,8 @@ module.exports = function(io){
     stream.on('data', function (tweet) {
 
       var geo = false;
+      var latitude = "";
+      var longitude = "";
       if(tweet.geo != null){
         geo = true;
         latitude = tweet.geo.coordinates[0];
