@@ -22,7 +22,7 @@ module.exports = function(io){
     console.log(stream);
     stream.on('data', function (tweet) {
 
-      var geo = false,latitude,longitude;
+      var geo = false;
       if(tweet.geo != null){
         geo = true;
         latitude = tweet.geo.coordinates[0];
