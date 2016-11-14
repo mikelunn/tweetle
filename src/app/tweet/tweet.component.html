@@ -5,6 +5,9 @@
 
     <div class="addon" style="overflow-y: scroll; height:400px;">
 
+      <div *ngIf="tweets.length === 0" class="loading"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>
+
+
 
       <ul>
         <li *ngFor="let tweet of tweets" class="animated fadeIn clearfix">
