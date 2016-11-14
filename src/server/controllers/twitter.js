@@ -5,10 +5,10 @@ var twitter = require('ntwitter');
 
 module.exports = function(io){
   var twit = new twitter({
-    consumer_key: 'jjcEqBEU2xzuf7lGX0zcnDkGR',
-    consumer_secret: 'mi0klOXqRBwMWkAUWBJrRlDg7Wjob9nWxE1FXrUoBlObk94NsA',
-    access_token_key: '2997568669-mGk3lhWn9CVsWq8xfPw6uAlaDrQ1SNJ0M1z5hD6',
-    access_token_secret: 'qi9zPhfCeFdorykZhfauqNZQ2wmIIW8VMI1WZlTTLYTvD'
+    consumer_key: 'your_key',
+    consumer_secret: 'your_key',
+    access_token_key: 'your_key',
+    access_token_secret: 'your_key'
   });
 
   var criteria = ['-80.148662,25.764123,-80.117420,25.873042'];
@@ -22,7 +22,9 @@ module.exports = function(io){
     console.log(stream);
     stream.on('data', function (tweet) {
 
-      var geo = false,latitude,longitude;
+      var geo = false;
+      var latitude = "";
+      var longitude = "";
       if(tweet.geo != null){
         geo = true;
         latitude = tweet.geo.coordinates[0];
